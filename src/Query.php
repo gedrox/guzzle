@@ -165,7 +165,7 @@ class Query extends Collection
                 $data,
                 '',
                 function ($key, $prefix) use ($numericIndices) {
-                    return !$numericIndices && is_int($key)
+                    return is_int($key)
                         ? "{$prefix}[{$key}]"
                         : "{$prefix}.{$key}";
                 }
